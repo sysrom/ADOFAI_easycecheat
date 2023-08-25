@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="42">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>5</ID>
+      <Description>"AutoPlay"</Description>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,RDC:get_auto+1b)
+RDC:get_auto+1b:
+mov eax,1
+
+RDC:get_auto+20:
+nop
+
+RDC:get_auto+21:
+nop
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+RDC:get_auto+1b:
+movzx eax,byte ptr [rax+00000529]
+//
+//Alt: db 0F B6 80 29 05 00 00
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>6</ID>
+      <Description>"Debug"</Description>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,RDC:get_debug+1b) 
+RDC:get_debug+1b:
+mov eax,1
+
+RDC:get_debug+20:
+nop
+
+RDC:get_debug+21:
+nop
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+RDC:get_debug+1b:
+movzx eax,byte ptr [rax+00000528]
+//Alt: db 0F B6 80 28 05 00 00
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
